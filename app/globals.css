@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════════════════════════
+   KISANSETU AI — LIGHT AGRICULTURAL DESIGN SYSTEM
+   Palette: Cream, Sage, Natural Green, Golden Harvest
+   Feeling: Beautiful Indian farm on a fresh morning
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Light Agricultural Palette */
+  --bg-cream:         #F5F8F0;
+  --bg-sage-soft:     #ECF4E8;
+  --bg-card:          #FFFFFF;
+  --bg-green-soft:    #E7F3E5;
+  --bg-green-light:   #F3F8F1;
+
+  --primary-green:    #2E7D4F;
+  --fresh-green:      #4CAF70;
+  --dark-text:        #183326;
+  --secondary-text:   #607568;
+  --border-sage:      #DCE8D8;
+  --golden-accent:    #D7A83E;
+  --golden-soft:      #F6EBC8;
+
+  /* Component tokens */
+  --background:       #F5F8F0;
+  --foreground:       #183326;
+  --card-bg:          rgba(255, 255, 255, 0.80);
+  --card-border:      rgba(46, 125, 79, 0.12);
+  --glass-bg:         rgba(255, 255, 255, 0.72);
+  --glass-border:     rgba(46, 125, 79, 0.14);
+}
+
+/* ── Base ────────────────────────────────────────────────────── */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Inter', sans-serif;
+}
+
+::selection {
+  background-color: #4CAF70;
+  color: #183326;
+}
+
+/* ── Light Agricultural Glassmorphism ───────────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(46, 125, 79, 0.14);
+  box-shadow: 0 8px 32px -8px rgba(24, 51, 38, 0.10),
+              0 2px 8px -2px rgba(24, 51, 38, 0.06);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(46, 125, 79, 0.12);
+  box-shadow: 0 4px 20px -4px rgba(24, 51, 38, 0.08),
+              0 1px 4px rgba(24, 51, 38, 0.04);
+  transition: transform 0.30s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.30s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.30s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(46, 125, 79, 0.28);
+  box-shadow: 0 10px 32px -6px rgba(24, 51, 38, 0.14),
+              0 2px 8px rgba(24, 51, 38, 0.06);
+  transform: translateY(-3px);
+}
+
+/* ── Soft Agricultural Card Surfaces ───────────────────────── */
+.agri-card {
+  background: #FFFFFF;
+  border: 1px solid #DCE8D8;
+  box-shadow: 0 2px 12px -2px rgba(24, 51, 38, 0.06);
+  border-radius: 1rem;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.agri-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -4px rgba(24, 51, 38, 0.10);
+}
+
+.agri-surface {
+  background: #F3F8F1;
+  border: 1px solid #DCE8D8;
+}
+
+/* ── Natural Green Accent Helpers ───────────────────────────── */
+.text-agri-primary   { color: #2E7D4F; }
+.text-agri-fresh     { color: #4CAF70; }
+.text-agri-dark      { color: #183326; }
+.text-agri-muted     { color: #607568; }
+.text-agri-gold      { color: #D7A83E; }
+
+.bg-agri-primary     { background-color: #2E7D4F; }
+.bg-agri-soft        { background-color: #E7F3E5; }
+.bg-agri-cream       { background-color: #F5F8F0; }
+
+.border-agri         { border-color: #DCE8D8; }
+
+/* ── Organic Gradient Text ───────────────────────────────────── */
+.gradient-text-leaf {
+  background: linear-gradient(135deg, #2E7D4F 0%, #4CAF70 50%, #6FCF97 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-harvest {
+  background: linear-gradient(135deg, #D7A83E 0%, #C47E2D 60%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Natural Animations ─────────────────────────────────────── */
+@keyframes wind-sway-subtle {
+  0%, 100% { transform: rotate(0deg) skewX(0deg); }
+  50%       { transform: rotate(1.8deg) skewX(0.8deg); }
+}
+
+@keyframes wind-sway-gentle {
+  0%, 100% { transform: rotate(0deg) skewX(0deg); }
+  50%       { transform: rotate(-2.2deg) skewX(-1.2deg); }
+}
+
+/* Natural green breathing orb (no neon) */
+@keyframes breathing-orb {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 18px rgba(46, 125, 79, 0.35),
+                inset 0 0 10px rgba(215, 168, 62, 0.20);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 28px rgba(46, 125, 79, 0.55),
+                inset 0 0 16px rgba(215, 168, 62, 0.32);
+  }
+}
+
+@keyframes leaf-spin-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes sunlight-shimmer {
+  0%, 100% {
+    opacity: 0.30;
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    opacity: 0.50;
+    transform: scale(1.04) translate(6px, 3px);
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes shimmer-gold {
+  0%    { background-position: -200% center; }
+  100%  { background-position:  200% center; }
+}
+
+.animate-wind-subtle   { animation: wind-sway-subtle 7s ease-in-out infinite; transform-origin: bottom center; }
+.animate-wind-gentle   { animation: wind-sway-gentle 9s ease-in-out infinite; transform-origin: bottom center; }
+.animate-breathing-orb { animation: breathing-orb 3.8s ease-in-out infinite; }
+.animate-orbit-ring    { animation: leaf-spin-orbit 14s linear infinite; }
+.animate-sunlight      { animation: sunlight-shimmer 12s ease-in-out infinite; }
+.animate-gentle-float  { animation: gentle-float 5s ease-in-out infinite; }
+
+/* ── Light Form Inputs ──────────────────────────────────────── */
+.agri-input {
+  background: #F9FBF8;
+  border: 1px solid #DCE8D8;
+  color: #183326;
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.813rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.agri-input::placeholder { color: #9BB5A0; }
+.agri-input:focus {
+  outline: none;
+  border-color: #4CAF70;
+  box-shadow: 0 0 0 3px rgba(76, 175, 112, 0.15);
+}
+
+/* ── Primary Buttons ────────────────────────────────────────── */
+.btn-agri-primary {
+  background-color: #2E7D4F;
+  color: #ffffff;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.813rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 2px 8px rgba(46, 125, 79, 0.25);
+}
+.btn-agri-primary:hover {
+  background-color: #256642;
+  box-shadow: 0 4px 14px rgba(46, 125, 79, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-agri-secondary {
+  background-color: #E7F3E5;
+  color: #2E7D4F;
+  border: 1px solid #DCE8D8;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.813rem;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.2s ease;
+}
+.btn-agri-secondary:hover { background-color: #D4EDD0; }
+
+/* ── Modern Scrollbar (Sage) ────────────────────────────────── */
+::-webkit-scrollbar         { width: 5px; height: 5px; }
+::-webkit-scrollbar-track   { background: #ECF4E8; }
+::-webkit-scrollbar-thumb   { background: rgba(46, 125, 79, 0.22); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(46, 125, 79, 0.45); }
+
+/* ── No-scrollbar utility ───────────────────────────────────── */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ── Progress Bar — Organic Green ──────────────────────────── */
+.progress-agri {
+  height: 8px;
+  background: #E7F3E5;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid #DCE8D8;
+}
+.progress-agri-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #2E7D4F, #4CAF70);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Accessibility: Reduced Motion ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-wind-subtle,
+  .animate-wind-gentle,
+  .animate-breathing-orb,
+  .animate-orbit-ring,
+  .animate-sunlight,
+  .animate-gentle-float {
+    animation: none !important;
+  }
+}
